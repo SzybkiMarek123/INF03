@@ -1,0 +1,45 @@
+*{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+ text-decoration: white;
+ padding: 2px;
+ background-color: darkgreen;
+}
+nav{
+ text-decoration: white;
+ padding: 2px;
+ background-color: forestgreen;
+}
+footer{
+ text-decoration: white;
+ padding: 2px;
+ background-color: darkgreen;
+}
+section{
+    float: left;
+    background-color: lightgreen;
+    width: 33.3%;
+    height: 550PX;
+    padding-top: 10px;
+    overflow: auto;
+}
+h2 {
+    width: 33%;
+    display: inline-block;
+}
+table,td,th{
+    border: 1px solid darkgreen;
+}
+table{
+    width: 90%;
+    border-collapse: collapse;
+}
+#styleIMG{
+    width: 95%;
+    border-radius: 8px;
+}
+#styleTR tr::hover{
+    background-color: ForestGreen
+}
