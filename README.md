@@ -1,1 +1,1 @@
-cos
+pozdrawiam wszystkich murzynów
