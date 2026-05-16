@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatuaże</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <header>
+        <section id="naglowek1">
+            <img src="logo.png" alt="salon">
+        </section>
+        <section id="naglowek2">
+            <h1>Studio Tatuażu</h1>
+        </section>
+    </header>
+
+    <main>
+        <section id="sekcja">
+            <h2>Galeria</h2>
+
+            <div id="galeria">
+                <img class="miniatury" src="smok.png" alt="smok">
+                <img class="miniatury" src="koliber.png" alt="koliber">
+            </div>
+        </section>
+
+        <aside>
+            <h3>Dodaj wzór</h3>
+
+            <form>
+                <label for="plik">Wzór:</label><br>
+                <input type="file" id="plik" accept=".png"><br>
+
+                <label for="kolor">Kolor:</label><br>
+                <select id="kolor">
+                    <option>Czarny</option>
+                    <option>Czerwony</option>
+                    <option>Zielony</option>
+                    <option>Niebieski</option>
+                </select><br>
+
+                <label for="cena">Cena:</label><br>
+                <input type="number" id="cena"><br>
+
+                <button type="button" onclick="dodaj()">Dodaj Wzór</button>
+            </form>
+
+            <p id="wynik"></p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Autor strony:numer zdającego</p>
+    </footer>
+
+    <script>
+        function dodaj() {
+            const plikInput = document.getElementById("plik");
+            const kolor = document.getElementById("kolor").value;
+            const cena = document.getElementById("cena").value;
+
+            const plik = plikInput.files[0];
+
+            if (!plik){
+                return;
+            } 
+
+            const url = URL.createObjectURL(plik);
+
+            document.getElementById("wynik").textContent =
+                `Wzór: ${plik.name}, kolor: ${kolor}, cena: ${cena} zł`;
+
+            const img = document.createElement("img");
+            img.src = url;
+            img.alt = plik.name;
+            img.classList.add("miniatury");
+
+            document.getElementById("galeria").appendChild(img);
+        }
+    </script>
+</body>
+</html>
